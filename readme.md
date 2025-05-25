@@ -1,11 +1,10 @@
-### 模拟题目：
+### 一、模拟题目：
 在阿里云服务器上搭建如下技术原型：使用两台云服务器和本机来模仿从本地发起请求给ESB（ecs1），然后ESB同步转发请求到下游（ecs2）并接受返回消息，最后异步将这条消息存入mq（ecs2）。
 
-### 基础架构设计：
-1. 时序图：
-   ![时序图.png](/v2/file/notepad/downloadfile?file_id=6&location=2#size=400x243)
+### 二、基础架构设计：
+ 
 
-### 时序图如下
+1. #### 时序图如下
 
 ```mermaid
 sequenceDiagram
@@ -22,9 +21,7 @@ sequenceDiagram
     Note over MQ: 消息持久化到队列
 ```
 
-
-2. 应用架构图：
-   ![架构图.png](/v2/file/notepad/downloadfile?file_id=7&location=2#size=400x231)
+2. #### 应用架构图如下
 
 ```mermaid
 graph LR
@@ -51,15 +48,15 @@ graph LR
     style D fill:#f96,stroke:#333
 ```
 
-### 开发源码：
+### 三、开发源码：
 github：
 https://github.com/sjaylee/esb-demo/
 
-### 部署安装（手工，后续改为CICD）：
+### 四、部署安装（手工，后续改为CICD）：
 1. 环境：	开网络端口、服务器换源、安装 java17、安装activeMQ、安装lszrz（ == 最耗时间 == ）
 2. 应用配置：环境变量改为生产环境
 
-### 验证步骤：
+### 五、验证步骤：
 
 1. ####  本地电脑发送请求
 * windows电脑发送请求 （win 11 CMD 执行下面命令）：
