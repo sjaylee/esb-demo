@@ -101,7 +101,7 @@ https://github.com/sjaylee/esb-demo/
 > 2025-05-24T21:31:05.756+08:00  INFO 27080 --- [downstream-service] [ad #8 - Threads] async-mq-writer-route                    : == 开始异步写入MQ==
 2025-05-24T21:31:05.769+08:00  INFO 27080 --- [downstream-service] [ad #8 - Threads] async-mq-writer-route                    : == 消息已存入MQ: {orderId:ORD-20250524-WIN,product:Book,quantity:3,price:60.99}==
 5. ####  查看MQ服务（ecs2）上的日志：
-* 登录ActiveMQ 6.1.6 的WebConsole上查看MQ消息：  http://47.117.133.216:8161/admin/  （账号密码都是admin）
+* 登录ActiveMQ 6.1.6 的WebConsole上查看MQ消息：  http://47.117.133.216:8161/admin/   
 *  登录控制台后，点击左侧菜单的 Queues → 选择目标队列（如 ESB_MESSAGES），可以看到历次消息处理
 *  ![MQ查询.png](/v2/file/notepad/downloadfile?file_id=2&location=2#size=400x275)
 
