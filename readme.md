@@ -105,8 +105,31 @@ https://github.com/sjaylee/esb-demo/
 > 2025-05-24T21:31:05.756+08:00  INFO 27080 --- [downstream-service] [ad #8 - Threads] async-mq-writer-route                    : == 开始异步写入MQ==
 2025-05-24T21:31:05.769+08:00  INFO 27080 --- [downstream-service] [ad #8 - Threads] async-mq-writer-route                    : == 消息已存入MQ: {orderId:ORD-20250524-WIN,product:Book,quantity:3,price:60.99}==
 5. ####  查看MQ服务（ecs2）上的日志：
-* 登录ActiveMQ 6.1.6 的WebConsole上查看MQ消息：  http://47.117.133.216:8161/admin/   
-*  登录控制台后，点击左侧菜单的 Queues → 选择目标队列（如 ESB_MESSAGES），可以看到历次消息处理
-*  ![MQ查询.png](/v2/file/notepad/downloadfile?file_id=2&location=2#size=400x275)
+   * ####  ECS2（MQ安装机器上） 输入
+  
+     ```python
+        /opt/apache-activemq-6.1.6/bin/activemq dstat
+     ```
+   * #### 结果如下 可以看到消息已经存在队列ESB_MESSAGES 中
+    >       
+   >  INFO: Loading '/opt/apache-activemq-6.1.6/bin/setenv'
+      INFO: Using java '/usr/java/jdk-17/bin/java'
+      Java Runtime: Oracle Corporation 17.0.15 /usr/lib/jvm/jdk-17.0.15-oracle-x64
+      Heap sizes: current=67584k  free=65833k  max=1048576k
+      JVM args: -Xms64M -Xmx1G -Djava.util.logging.config.file=logging.properties -Djava.security.auth.login.config=/opt/apache-activemq-6.1.6/conf/login.config --add-reads=java.xml=java.logging --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.naming/javax.naming.spi=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport.tcp=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=java.base/sun.net.www.protocol.http=ALL-UNNAMED --add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED --add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED --add-exports=jdk.xml.dom/org.w3c.dom.html=ALL-UNNAMED --add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED -Dactivemq.classpath=/opt/apache-activemq-6.1.6/conf:/opt/apache-activemq-6.1.6/../lib/: -Dactivemq.home=/opt/apache-activemq-6.1.6/ -Dactivemq.base=/opt/apache-activemq-6.1.6/ -Dactivemq.conf=/opt/apache-activemq-6.1.6/conf -Dactivemq.data=/opt/apache-activemq-6.1.6/data -Djolokia.conf=file:/opt/apache-activemq-6.1.6/conf/jolokia-access.xml
+      Extensions classpath:
+      [/opt/apache-activemq-6.1.6/lib,/opt/apache-activemq-6.1.6/lib/camel,/opt/apache-activemq-6.1.6/lib/optional,/opt/apache-activemq-6.1.6/lib/web,/opt/apache-activemq-6.1.6/lib/extra]
+      ACTIVEMQ_HOME: /opt/apache-activemq-6.1.6
+      ACTIVEMQ_BASE: /opt/apache-activemq-6.1.6
+      ACTIVEMQ_CONF: /opt/apache-activemq-6.1.6/conf
+      ACTIVEMQ_DATA: /opt/apache-activemq-6.1.6/data
+      useJmxServiceUrl Found JMS Url: service:jmx:rmi://127.0.0.1/stub/rO0ABXNyAC5qYXZheC5tYW5hZ2VtZW50LnJlbW90ZS5ybWkuUk1JU2VydmVySW1wbF9TdHViAAAAAAAAAAICAAB4cgAaamF2YS5ybWkuc2VydmVyLlJlbW90ZVN0dWLp/tzJi+FlGgIAAHhyABxqYXZhLnJtaS5zZXJ2ZXIuUmVtb3RlT2JqZWN002G0kQxhMx4DAAB4cHc3AAtVbmljYXN0UmVmMgAADDE3Mi4xNi45Ny40OQAAjl30TB79jnqloxZaVuUAAAGXAxOcq4ABAHg=
+      Connecting to pid: 14131
+      Name                                                Queue Size  Producer #  Consumer #   Enqueue #   Dequeue #   Forward #    Memory %
+      ActiveMQ.Advisory.Connection                                 0           0           0           5           0           0           0
+      ActiveMQ.Advisory.MasterBroker                               0           0           0           1           0           0           0
+      ActiveMQ.Advisory.Queue                                      0           0           0           1           0           0           0
+      ESB_MESSAGES                                                 3           0           0           3           0           0           0
+  
 
 
