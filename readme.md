@@ -108,7 +108,7 @@ graph LR
   ```bath
      /opt/apache-activemq-6.1.6/bin/activemq dstat
   ```
-  * #### 结果如下 可以看到消息已经存在队列ESB_MESSAGES 中
+* #### 结果如下 可以看到消息已经存在队列ESB_MESSAGES 中
          
    >  INFO: Loading '/opt/apache-activemq-6.1.6/bin/setenv'
      INFO: Using java '/usr/java/jdk-17/bin/java'
