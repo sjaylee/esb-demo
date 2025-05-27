@@ -32,7 +32,7 @@ public class ESBRoute {
 
 
 
-                from("jetty:http://localhost:8080/esb")
+                from("jetty:http://0.0.0.0:8080/esb")
 //                from("servlet://esb")
                         .setBody(body().convertToString()) // 强制读取原始文本
                         .log("ESB 收到请求: ${body}")

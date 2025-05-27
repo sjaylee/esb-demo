@@ -30,7 +30,7 @@ public class DownstreamRoute extends RouteBuilder {
 
 
         // 处理同步请求并异步写MQ
-        from("jetty:http://localhost:8081/downstream")
+        from("jetty:http://0.0.0.0:8081/downstream")
                 .routeId("main-processing-route")
                 .log(LoggingLevel.INFO, "接收到ESB请求: ${body}")
                 .process(exchange -> {

@@ -52,6 +52,10 @@ graph LR
 github：
 https://github.com/sjaylee/esb-demo/
 
+注意：IDEA分别打开子项目：
+1. ####  打开子项目：esb-service  （模拟ESB）
+2. ####  打开子项目：downstream-service  （模拟下游应用）
+
 ### 四、部署安装（手工，后续改为CICD）：
 1. 环境：	开网络端口、服务器换源、安装 java17、安装activeMQ、安装lszrz（ == 最耗时间 == ）
 2. 应用配置：环境变量改为生产环境
