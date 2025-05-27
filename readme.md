@@ -71,7 +71,7 @@ https://github.com/sjaylee/esb-demo/
   ```
 * linux 平台发送请求：
   ```bath
-  curl -X POST "http://localhost:8080/esb" \
+  curl -X POST "http://47.117.120.129:8080/esb" \
       -H "Content-Type: application/json" \
       -d '{"orderId":"ORD-20250524-WIN","product":"Book","quantity":3,"price":60.99}'
 ```
